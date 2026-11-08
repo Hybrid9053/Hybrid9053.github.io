@@ -7,7 +7,7 @@ import { validateContact } from "@/lib/contact";
  * Secrets stay server-side — configure in Vercel → Project → Settings → Environment Variables:
  *   RESEND_API_KEY      required — Resend API key
  *   CONTACT_FROM_EMAIL  required — sender on a Resend-verified domain, e.g. "IbraHybrid <contact@ibrahybrid.me>"
- *   CONTACT_TO_EMAIL    optional — defaults to ibrahim@zanhybrid.co.tz
+ *   CONTACT_TO_EMAIL    optional — defaults to ibrahim@ibrahybrid.me
  *
  * Spam protection: honeypot field, minimum fill time, origin check, size cap and
  * a best-effort per-IP rate limit (in-memory; resets on cold start).
@@ -73,7 +73,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL || "ibrahim@zanhybrid.co.tz";
+  const to = process.env.CONTACT_TO_EMAIL || "ibrahim@ibrahybrid.me";
   if (!apiKey || !from) {
     console.error("[contact] RESEND_API_KEY / CONTACT_FROM_EMAIL not configured");
     return json({ error: "not_configured" }, 503);
