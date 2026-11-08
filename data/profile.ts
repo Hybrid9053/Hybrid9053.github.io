@@ -30,7 +30,7 @@ export const profile = {
 
 export const contact = {
   /** Professional email — always shown first. */
-  email: "ibrahim@zanhybrid.co.tz",
+  email: "ibrahim@ibrahybrid.me",
   /** Personal email — secondary, shown less prominently. */
   personalEmail: "mosiour9053@gmail.com",
 } as const;
